@@ -72,9 +72,9 @@ class Search {
         this.openOverlay()
       }
 
-      /*if (e.keyCode === 70) {
+      if (e.keyCode === 70) {
         this.openOverlay()
-      }*/
+      }
     }
 
     if (e.keyCode == 27 && this.isOverlayOpen) {
