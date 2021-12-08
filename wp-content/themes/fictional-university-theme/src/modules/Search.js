@@ -66,24 +66,21 @@ class Search {
 /*    if (e.keyCode == 83 && !this.isOverlayOpen && !$("input, textarea").is(":focus")) {
       this.openOverlay()
     }*/
-    if (!$('input, textarea').is(':focus')) {
-      if (!this.isOverlayOpen) {
-        if (e.keyCode === 83) {
-          this.openOverlay()
-        }
 
-        if (e.keyCode === 70) {
+    if (!$("input, textarea").is(":focus")) {
+      if (e.keyCode === 83) {
+        if (this.isOverlayOpen) {
+          this.closeOverlay()
+        } else {
           this.openOverlay()
         }
       }
 
-      if (this.isOverlayOpen) {
-        if (e.keyCode === 83) {
+      if (e.keyCode === 70) {
+        if (this.isOverlayOpen) {
           this.closeOverlay()
-        }
-
-        if (e.keyCode === 70) {
-          this.closeOverlay()
+        } else {
+          this.openOverlay()
         }
       }
     }
