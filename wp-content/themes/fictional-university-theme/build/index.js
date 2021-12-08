@@ -4129,12 +4129,17 @@ class Search {
   }
 
   keyPressDispatcher(e) {
-    if (e.keyCode == 83 && !this.isOverlayOpen && !jquery__WEBPACK_IMPORTED_MODULE_0___default()("input, textarea").is(":focus")) {
-      this.openOverlay();
-    }
+    /*    if (e.keyCode == 83 && !this.isOverlayOpen && !$("input, textarea").is(":focus")) {
+          this.openOverlay()
+        }*/
+    if (!this.isOverlayOpen && !jquery__WEBPACK_IMPORTED_MODULE_0___default()("input, textarea").is(":focus")) {
+      if (e.keyCode == 83) {
+        this.openOverlay();
+      }
 
-    if (e.keyCode == 69 && !this.isOverlayOpen) {
-      this.openOverlay();
+      if (e.keyCode == 70) {
+        this.openOverlay();
+      }
     }
 
     if (e.keyCode == 27 && this.isOverlayOpen) {

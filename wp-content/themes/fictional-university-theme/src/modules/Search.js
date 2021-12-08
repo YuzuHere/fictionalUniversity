@@ -63,12 +63,18 @@ class Search {
   }
 
   keyPressDispatcher(e) {
-    if (e.keyCode == 83 && !this.isOverlayOpen && !$("input, textarea").is(":focus")) {
+/*    if (e.keyCode == 83 && !this.isOverlayOpen && !$("input, textarea").is(":focus")) {
       this.openOverlay()
-    }
+    }*/
 
-    if (e.keyCode == 69 && !this.isOverlayOpen) {
-      this.openOverlay()
+    if (!this.isOverlayOpen && !$("input, textarea").is(":focus")) {
+      if (e.keyCode == 83) {
+        this.openOverlay()
+      }
+
+      if (e.keyCode == 70) {
+        this.openOverlay()
+      }
     }
 
     if (e.keyCode == 27 && this.isOverlayOpen) {
