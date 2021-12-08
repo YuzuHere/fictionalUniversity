@@ -66,28 +66,27 @@ class Search {
 /*    if (e.keyCode == 83 && !this.isOverlayOpen && !$("input, textarea").is(":focus")) {
       this.openOverlay()
     }*/
-if (!$("input, textarea").is(":focus")) {
+    if (!$('input, textarea').is(':focus')) {
+      if (!this.isOverlayOpen) {
+        if (e.keyCode === 83) {
+          this.openOverlay()
+        }
 
-  if (!this.isOverlayOpen) {
-    if (e.keyCode === 83) {
-      this.openOverlay()
-    }
+        if (e.keyCode === 70) {
+          this.openOverlay()
+        }
+      }
 
-    if (e.keyCode === 70) {
-      this.openOverlay()
-    }
-  }
+      if (this.isOverlayOpen) {
+        if (e.keyCode === 83) {
+          this.closeOverlay()
+        }
 
-  if (this.isOverlayOpen) {
-    if (e.keyCode === 83) {
-      this.closeOverlay()
+        if (e.keyCode === 70) {
+          this.closeOverlay()
+        }
+      }
     }
-
-    if (e.keyCode === 70) {
-      this.closeOverlay()
-    }
-  }
-}
 
 
  /*   if (e.keyCode == 27 && this.isOverlayOpen) {
