@@ -26,7 +26,7 @@ class Search {
 
   // 3. methods (function, action...)
   typingLogic() {
-    if (this.searchField.val() != this.previousValue) {
+    if (this.searchField.val() !== this.previousValue) {
       clearTimeout(this.typingTimer)
 
       if (this.searchField.val()) {
