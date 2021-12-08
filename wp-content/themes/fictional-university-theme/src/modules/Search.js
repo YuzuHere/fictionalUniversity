@@ -71,7 +71,7 @@ class Search {
       if (e.keyCode === 83) {
         if (this.isOverlayOpen) {
           this.closeOverlay()
-        } else {
+        } else if (!this.isOverlayOpen) {
           this.openOverlay()
         }
       }
@@ -79,7 +79,7 @@ class Search {
       if (e.keyCode === 70) {
         if (this.isOverlayOpen) {
           this.closeOverlay()
-        } else {
+        } else if (!this.isOverlayOpen) {
           this.openOverlay()
         }
       }
