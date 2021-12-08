@@ -68,11 +68,11 @@ class Search {
     }*/
 
     if (!this.isOverlayOpen && !$("input, textarea").is(":focus")) {
-      if (e.keyCode == 83) {
+      if (e.keyCode === 83) {
         this.openOverlay()
       }
 
-      if (e.keyCode == 70) {
+      if (e.keyCode === 70) {
         this.openOverlay()
       }
     }
