@@ -4114,6 +4114,7 @@ class Search {
   }
 
   getResults() {
+    this.resultsDiv.html("<h2>Hello, test</h2>");
     jquery__WEBPACK_IMPORTED_MODULE_0___default().when(jquery__WEBPACK_IMPORTED_MODULE_0___default().getJSON(universityData.root_url + "/wp-json/wp/v2/posts?search=" + this.searchField.val()), jquery__WEBPACK_IMPORTED_MODULE_0___default().getJSON(universityData.root_url + "/wp-json/wp/v2/pages?search=" + this.searchField.val())).then((posts, pages) => {
       var combinedResults = posts[0].concat(pages[0]);
       this.resultsDiv.html(`
