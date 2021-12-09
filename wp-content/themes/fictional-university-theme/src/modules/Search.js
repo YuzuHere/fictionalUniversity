@@ -73,6 +73,7 @@ class Search {
           </div>
         </div>
       `)
+      this.isSpinnerVisible = false
     })
   }
 
