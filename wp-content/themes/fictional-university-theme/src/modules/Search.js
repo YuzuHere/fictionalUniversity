@@ -56,9 +56,15 @@ class Search {
         </div>
         <div class="one-third">
             <h2 class="search-overlay__section-title">Programs</h2>
+            ${results.programs.length ? '<ul class="link-list min-list">' : `<p>No programs match that search. <a href='${universityData.root_url}/programs'>View all programs</a></p>`}
+          ${results.programs.map(item => `<li><a href="${item.permalink}">${item.title}</a>}</li>`).join("")}
+        ${results.programs.length ? "</ul>" : ""}
             <h2 class="search-overlay__section-title">Professors</h2></div>
         <div class="one-third">
             <h2 class="search-overlay__section-title">Campuses</h2>
+            ${results.campuses.length ? '<ul class="link-list min-list">' : "<p>No campuses matches that search.</p>"}
+          ${results.campuses.map(item => `<li><a href="${item.permalink}">${item.title}</a>}</li>`).join("")}
+        ${results.campuses.length ? "</ul>" : ""}
             <h2 class="search-overlay__section-title">Events</h2>
         </div>
       </div>
