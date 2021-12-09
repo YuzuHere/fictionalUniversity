@@ -45,7 +45,24 @@ class Search {
   }
 
   getResults() {
-    $.when($.getJSON(universityData.root_url + "/wp-json/wp/v2/posts?search=" + this.searchField.val()), $.getJSON(universityData.root_url + "/wp-json/wp/v2/pages?search=" + this.searchField.val())).then(
+    $.getJSON(universityData.root_url + "/wp-json/university/v1/search?term=" + this.searchField.val(), (results) => {
+      this.resultsDiv.html(`
+      <div class="row">
+        <div class="one-third">
+            <h2 class="search-overlay__section-title">General Information</h2>
+        </div>
+        <div class="one-third">
+            <h2 class="search-overlay__section-title">Programs</h2>
+            <h2 class="search-overlay__section-title">Professors</h2></div>
+        <div class="one-third">
+            <h2 class="search-overlay__section-title">Campuses</h2>
+            <h2 class="search-overlay__section-title">Events</h2>
+        </div>
+      </div>
+      `)
+    });
+
+/*    $.when($.getJSON(universityData.root_url + "/wp-json/wp/v2/posts?search=" + this.searchField.val()), $.getJSON(universityData.root_url + "/wp-json/wp/v2/pages?search=" + this.searchField.val())).then(
       (posts, pages) => {
         var combinedResults = posts[0].concat(pages[0])
         this.resultsDiv.html(`
@@ -59,7 +76,7 @@ class Search {
       () => {
         this.resultsDiv.html("<p>Unexpected error; please try again.</p>")
       }
-    )
+    )*/
   }
 
   keyPressDispatcher(e) {
