@@ -30,6 +30,7 @@ function universitySearchResults ($data) {
 				'title'     => get_the_title(),
 				'permalink' => get_the_permalink(),
 				'authorName' => get_the_author(),
+				'postType' => get_post_type()
 			);
 		}
 		if (get_post_type() == 'professor') {
