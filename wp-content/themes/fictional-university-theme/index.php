@@ -21,10 +21,10 @@ pageBanner(array(
         <?php the_excerpt(); ?>
         <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue reading &raquo;</a></p>
       </div>
-
     </div>
   <?php }
   echo paginate_links();
+
 ?>
 </div>
 
